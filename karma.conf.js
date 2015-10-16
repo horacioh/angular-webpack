@@ -34,14 +34,20 @@ module.exports = function(config) {
     webpack :{
         devtool: 'inline-source-map',
         module: {
-            loaders: [
-                /* add the appropriate loaders */
-                /* almost the same as the webpack.config */
-                { test: /\.html$/, loader: 'raw' },
-                { test: /\.styl$/, loader: 'style!css!stylus' },
-                { test: /\.css/, loader: 'style!css' },
-                { test: /\.js$/, loader: 'babel?stage=1', exclude: [/client\/lib/, /node_modules/] }
-            ]
+            loaders: [{
+							test: /\.js$/,
+							exclude: /node_modules/,
+							loader: 'babel?stage=1'
+						},{
+							test: /\.css$/,
+							loader: "style!css"
+						},{
+							test: /\.(eot|woff|ttf|svg|woff2|png|jpg|jpeg)$/,
+							loader: "file"
+						},{
+							test: /\.html$/,
+							loader: "raw"
+						}]
         },
 
         stylus: {
