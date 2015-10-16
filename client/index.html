@@ -3,12 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Hamerlin App</title>
+	{% for (var css in o.htmlWebpackPlugin.files.css) { %}
+	<link href="{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">{% } %}
 </head>
 <body>
 
 	<app></app>
 
 	<!-- bundle & nothing else -->
-	<script src="bundle.js"></script>
+	{% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
+	<script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>{% } %}
 </body>
 </html>
