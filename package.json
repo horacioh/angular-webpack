@@ -1,7 +1,7 @@
 {
-  "name": "hamerlin-app",
+  "name": "angular-webpack",
   "version": "0.0.1",
-  "description": "Fumigadora Hamerlin web-based application",
+  "description": "base stack for an AngularJS application using Webpack + ES6 (babel)",
   "main": "index.js",
   "scripts": {
 		"start": "NODE_ENV=dev webpack-dev-server --progress --colors",
@@ -16,7 +16,7 @@
     "webpack",
     "babel"
   ],
-  "author": "Horacio Herrera <me@hherrerag.com>",
+  "author": "Horacio Herrera <me@hherrerag.com> - @hhg2288",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.4.7",
